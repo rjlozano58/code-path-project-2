@@ -28,6 +28,14 @@ body{
   font-size: 100px;
 }
 
+.short-description{
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  margin: 40px 0;
+}
+
 .button-container{
   display: flex;
   flex-direction: row;
@@ -137,7 +145,7 @@ button:hover{
 } 
 
 img{
-  width:30%;
+  width:20%;
   display: block;
   margin: 20px auto;
 }

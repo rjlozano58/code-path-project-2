@@ -11,6 +11,7 @@ const Card = (props) => {
             <div className='card'>
                 <div className='front-card'>
                     <h3>{props.front}</h3>
+                    <h3>{props.difficulty}</h3>
                 </div>
 
                 <div className='back-card'>
@@ -19,7 +20,7 @@ const Card = (props) => {
             </div>
 
         </div>
-        
+
     )
 }
 

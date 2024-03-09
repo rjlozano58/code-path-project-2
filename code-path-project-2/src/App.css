@@ -69,6 +69,10 @@ button:hover{
   background-repeat: no-repeat;
 }
 
+button:active{
+  transform: scale(0.9);
+  box-shadow: 0 0 0 black;
+}
 .card-flip-container{
   position: relative;
   width:900px;

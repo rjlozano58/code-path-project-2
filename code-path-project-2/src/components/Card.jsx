@@ -6,6 +6,7 @@ import '../App.css'
 
 const Card = (props) => {
     return(
+
         <div className='card-flip-container'>
             <div className='card'>
                 <div className='front-card'>
@@ -18,7 +19,7 @@ const Card = (props) => {
             </div>
 
         </div>
-    
+        
     )
 }
 

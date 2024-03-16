@@ -16,17 +16,17 @@ By the end of this assignment you will be able to...
 
     Part 2
     
-        User Input
+        [x] Use useState() to create more state variables of different types
         
-            [x] The user can enter their guess in a box before seeing the flipside of the card
-            
-            [x] Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect
-            
-        Moving Multiple Ways in the Card List
+        [x] Use state to change the visual appearance of the web app
         
-            [x] A back button displayed on the card can be used to return to the previous card in a set sequence
-            
-            [x] A next button displayed on the card can be used to navigate to the next card in a set sequence
+        [x] Use state to check that changes to other state are valid
+        
+        [x] Use the onClick() and onChange() events to call methods to adjust or reset state variables
+        
+        [x] Create space for user input with the input tag
+        
+        [x] Create more nested components in order to handle increasing complexity
 
 Required Features
 

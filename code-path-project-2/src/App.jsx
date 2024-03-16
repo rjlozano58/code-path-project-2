@@ -82,10 +82,8 @@ function App() {
       setCurr(curr - 1);
     }
 
-
     setResult("");
     setGuess("");
-
   }
  
   function updateRandomNumber(){

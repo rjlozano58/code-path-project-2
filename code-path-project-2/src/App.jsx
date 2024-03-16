@@ -6,7 +6,10 @@ import $ from 'jquery';
 
 function App() {
 
+  const [curr,setCurr] = useState(0);
   const [rand,setRand] = useState(0);
+  const [guess,setGuess] = useState("");
+  const [result,setResult] = useState("");
 
   const data = [
     ["Who is the Avenger that wears an armored exoskeleton?","Iron Man","Easy"],
@@ -31,7 +34,7 @@ function App() {
     ["What is the name of Thor's Brother?","Loki","Easy"],
     ["(true or false) Loki is NOT Thor's biological brother?","True","Easy"],
     ["How many heros are in the Guardian of the Galaxy?","5","Easy"],
-    ["When Iron Man arrives back to the US after being in captivity, what is his firt meal?","A Cheeseburger","Hard"],
+    ["When Iron Man arrives back to the US after being in captivity, what is his firt meal?","Cheeseburger","Hard"],
     ["Who said, \"With great power comes great responsibility\" ", "Uncle Ben","Easy"],
     ["Which two actors played Spider-Man before Tom Holland?","Toby Maguire and Andrew Garfield","Hard"],
     ["Who was Doctor Strange’s mentor?","The Ancient One","Hard"],
@@ -47,6 +50,43 @@ function App() {
 
   ]
 
+  const change = event =>{
+    let newValue = event.target.value;
+    setGuess(newValue);
+  }
+
+  const checkAnswer = () =>{
+    if (data[rand][1].toLowerCase() === guess.toLowerCase()){
+      setResult("Correct!");
+    }else{
+      setResult("Incorrect!");
+    }
+
+  }
+
+  function next(){
+    if (curr === data.length){
+      setCurr(0);
+    }else{
+      setCurr(curr + 1);
+    }
+
+    setResult("");
+    setGuess("");
+  }
+
+  function prev(){
+    if (curr === 0){
+      setCurr(data.length);
+    }else{
+      setCurr(curr - 1);
+    }
+
+
+    setResult("");
+    setGuess("");
+
+  }
  
   function updateRandomNumber(){
     let oldRand = rand;
@@ -56,22 +96,33 @@ function App() {
     }
     
     setRand(newRand);
+    setCurr(rand);
+    setResult("");
+    setGuess("");
   }
+
 
   return (
 
     <>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1280px-Marvel_Logo.svg.png"/>
-     <h1 className='title'>TRIVIA</h1>
-     <h2 className='short-description'> Test just how much of a Marvel fan you are! These questions will range in difficulty from easy to medium to hard. Hold Down card to reveal answer. Good Luck;)</h2>
-     <h2 className='short-description'> Number of cards: {data.length}</h2>
+    <h1 className='title'>TRIVIA</h1>
+    <h2 className='short-description'> Test just how much of a Marvel fan you are! These questions will range in difficulty from easy to medium to hard. Hold Down card to reveal answer. Good Luck;)</h2>
+    <h2 className='short-description'> Number of cards: {data.length}</h2>
 
-        <Card front={data[rand][0]} difficulty={data[rand][2]} back={data[rand][1]} />
+    <Card front={data[curr][0]} difficulty={data[curr][2]} back={data[curr][1]} />
 
-      <div className='button-container'>
-        <button onClick={updateRandomNumber}> Next Question</button>
-      </div>
+    <h3 className='result-text'>{result}</h3>
 
+    <div className='input-container'>
+      <input value={guess} onChange={change} className="input-text" type='text'></input>
+      <button onClick={checkAnswer} className='submit-button'>Submit Guess</button>
+    </div>
+    <div className='button-container'>
+      <button onClick={prev}>Prev</button>
+      <button onClick={next}>Next</button>
+      <button onClick={updateRandomNumber}> Shuffle</button>
+    </div>
 
     </>
   )

@@ -91,6 +91,7 @@ button:active{
   transition: all 0.3s ease;
   border-radius: 20px;
   user-select: none; 
+  border: 2px solid black;
 }
 
 
@@ -98,12 +99,10 @@ button:active{
 
 .card:hover {
   box-shadow:0 0 80px black;
-  /* transform: rotateY(15deg); */
 
 }
 .card:hover .front-card{
   box-shadow:0 0 80px black;
-  /* transform: rotateY(15deg); */
   background: linear-gradient(rgba(0, 0, 0, 0.7),
   rgba(0, 0, 0, 0.7)), url("https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/09/XMen-Vs-Avengers-1.jpg");
   background-size: cover;
@@ -152,4 +151,34 @@ img{
   width:20%;
   display: block;
   margin: 20px auto;
+}
+.result-text{
+  text-align: center;
+  width: fit-content;
+  display: block;
+  margin:20px auto;
+  font-size: 2em;
+  font-family: Helvetica;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: Helvetica;
+  
+}
+
+.input-text{
+  background-color: black;
+  color: white;
+  width: 25em;
+  height: 2em;
+  font-size: 2em;
+  display: block;
+  margin: auto 0;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-family: Helvetica;
+
 }

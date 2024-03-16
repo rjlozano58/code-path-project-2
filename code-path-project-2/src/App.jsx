@@ -10,6 +10,7 @@ function App() {
   const [rand,setRand] = useState(0);
   const [guess,setGuess] = useState("");
   const [result,setResult] = useState("");
+  const [streak,setStreak] = useState(0);
 
   const data = [
     ["Who is the Avenger that wears an armored exoskeleton?","Iron Man","Easy"],
@@ -58,8 +59,10 @@ function App() {
   const checkAnswer = () =>{
     if (data[curr][1].toLowerCase() === guess.toLowerCase()){
       setResult("Correct!");
+      setStreak(streak + 1);
     }else{
       setResult("Incorrect!");
+      setStreak(0);
     }
 
   }
@@ -89,6 +92,7 @@ function App() {
   function updateRandomNumber(){
     let oldRand = rand;
     let newRand = Math.floor(Math.random() * data.length);
+
     while(oldRand == newRand){
       newRand = Math.floor(Math.random() * data.length);
     }
@@ -103,24 +107,30 @@ function App() {
   return (
 
     <>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1280px-Marvel_Logo.svg.png"/>
-    <h1 className='title'>TRIVIA</h1>
-    <h2 className='short-description'> Test just how much of a Marvel fan you are! These questions will range in difficulty from easy to medium to hard. Hold Down card to reveal answer. Good Luck;)</h2>
-    <h2 className='short-description'> Number of cards: {data.length}</h2>
+      
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/1280px-Marvel_Logo.svg.png"/>
+      <h1 className='title'>TRIVIA</h1>
+      <h2 className='short-description'> Test just how much of a Marvel fan you are! These questions will range in difficulty from easy to medium to hard. Hold Down card to reveal answer. Good Luck;)</h2>
+      <h2 className='short-description'> Number of cards: {data.length}</h2>
 
-    <Card front={data[curr][0]} difficulty={data[curr][2]} back={data[curr][1]} />
+  
+      <h2 className='short-description'> Winning Streak: {streak}</h2>
 
-    <h3 className='result-text'>{result}</h3>
+      <Card front={data[curr][0]} difficulty={data[curr][2]} back={data[curr][1]} />
 
-    <div className='input-container'>
-      <input value={guess} onChange={change} className="input-text" type='text'></input>
-      <button onClick={checkAnswer} className='submit-button'>Submit Guess</button>
-    </div>
-    <div className='button-container'>
-      <button onClick={prev}>Prev</button>
-      <button onClick={next}>Next</button>
-      <button onClick={updateRandomNumber}> Shuffle</button>
-    </div>
+      <h3 className='result-text'>{result}</h3>
+
+      <div className='input-container'>
+        <input value={guess} onChange={change} className="input-text" type='text'></input>
+        <button onClick={checkAnswer} className='submit-button'>Submit Guess</button>
+      </div>
+
+      <div className='button-container'>
+        <button onClick={prev}>Prev</button>
+        <button onClick={next}>Next</button>
+        <button onClick={updateRandomNumber}> Shuffle</button>
+      </div>
+
 
     </>
   )

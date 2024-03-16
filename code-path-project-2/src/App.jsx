@@ -27,7 +27,7 @@ function App() {
     ["Who is Scott Lang?","Ant-Man","Hard"],
     ["Which movie kicked off the Marvel Cinematic Universe?","Iron Man","Hard"],
     ["Which Avenger loves to SMASH","Hulk","Easy"],
-    ["What is the name of Thor's hammer?","Mjölnir","Hard"],
+    ["What is the name of Thor's hammer?","Mjolnir","Hard"],
     ["What is the name of Thor's Fathers?","Odin","Medium"],
     ["Tony Stark's daughter says to him, \"I love you ___ \" ", "3000","Maybe Hard"],
     ["What is the name of Thor's Sister?","Hela","Medium"],
@@ -38,15 +38,15 @@ function App() {
     ["Who said, \"With great power comes great responsibility\" ", "Uncle Ben","Easy"],
     ["Which two actors played Spider-Man before Tom Holland?","Toby Maguire and Andrew Garfield","Hard"],
     ["Who was Doctor Strange’s mentor?","The Ancient One","Hard"],
-    ["Where is Captain America from?","Brooklyn, New York City","Medium"],
+    ["Where is Captain America from?","Brooklyn","Medium"],
     ["What is Captain America's name?","Steve Rodgers","Easy"],
     ["What did Steve Rodgers put in his shoes to make him taller (pre-super-soldier)", "Newspaper","Hard"],
     ["What is the name of the Avenger's aircraft","The Quinjet","Medium"],
     ["Who is the leader of shield?", "Nick Fury","Easy"],
-    ["How does Peter Parker become Spider-man?","Gets bit by a radioactive spider","EZPZ"],
+    ["How does Peter Parker become Spider-man?","Radioactive spider","EZPZ"],
     ["Who was the main villain in Captain America: The First Avenger?","Red Skull","Medium"],
     ["In the MCU, which villain is trying to get all the Infinity Stones?","Thanos","Medium"],
-    ["(true or false) Iron Man dies in Avengers: Infinity War?","False (He dies in Avenger: Endgame)","Easy"]
+    ["(true or false) Iron Man dies in Avengers: Infinity War?","False","Easy"]
 
   ]
 
@@ -56,7 +56,7 @@ function App() {
   }
 
   const checkAnswer = () =>{
-    if (data[rand][1].toLowerCase() === guess.toLowerCase()){
+    if (data[curr][1].toLowerCase() === guess.toLowerCase()){
       setResult("Correct!");
     }else{
       setResult("Incorrect!");

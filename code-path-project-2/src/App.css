@@ -180,5 +180,17 @@ img{
   border: 2px solid white;
   border-radius: 10px;
   font-family: Helvetica;
+  transition: 0.3s;
 
+}
+
+.input-text:hover{
+  background: white;
+  color: black;
+  transform: scale(1.05);
+
+}
+
+.input-text:active{
+  transform: scale(1);
 }

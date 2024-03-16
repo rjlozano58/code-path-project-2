@@ -12,6 +12,20 @@ By the end of this assignment you will be able to...
     
     [x] Use those div sections as the basis for CSS styling
 
+    Part 2
+    
+        User Input
+        
+            [x] The user can enter their guess in a box before seeing the flipside of the card
+            
+            [x] Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect
+            
+        Moving Multiple Ways in the Card List
+        
+            [x] A back button displayed on the card can be used to return to the previous card in a set sequence
+            
+            [x] A next button displayed on the card can be used to navigate to the next card in a set sequence
+
 Required Features
 
     [x] The title of the card set and some information about it, such as a short description and the total number of cards are displayed
